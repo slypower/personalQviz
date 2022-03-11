@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  personalQviz
+//  PersonalQuiz
 //
-//  Created by Виталий Бобрик on 10.03.22.
+//  Created by Виталий Бобрик on 11.03.22.
 //
 
 import UIKit
