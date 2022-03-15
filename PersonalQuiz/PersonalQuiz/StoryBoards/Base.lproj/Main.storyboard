@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Вопрос №-->
         <scene sceneID="t51-ka-JYE">
             <objects>
-                <viewController id="bAZ-GZ-gPc" sceneMemberID="viewController">
+                <viewController id="bAZ-GZ-gPc" customClass="QuestionsViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tqf-zl-cUU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,21 +98,33 @@
                                         <rect key="frame" x="121" y="0.0" width="46" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="BRN-Xw-mUL"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKj-tc-xKM">
                                         <rect key="frame" x="121" y="46" width="46" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="pPJ-Tb-wqg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpT-e1-r2G">
                                         <rect key="frame" x="121" y="92" width="46" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="GsK-z3-xdq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="csh-BY-bZs">
                                         <rect key="frame" x="121" y="138" width="46" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="singleAnswerButtonPressed:" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="CT9-no-cou"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -128,7 +140,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-Ia-EwV">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jtY-Ia-EwV">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -142,7 +154,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GEt-gf-KWN">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="GEt-gf-KWN">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -156,7 +168,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YXj-bV-GR7">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YXj-bV-GR7">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -170,7 +182,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMx-az-bON">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="EMx-az-bON">
                                                 <rect key="frame" x="239" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -179,6 +191,9 @@
                                         <rect key="frame" x="0.0" y="188" width="288" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="multipleAnswerButtonPressed" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="QHe-KB-RY7"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -208,14 +223,17 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCQ-AX-1us">
                                         <rect key="frame" x="0.0" y="82.5" width="288" height="30"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="Button"/>
+                                        <state key="normal" title="Ответить"/>
+                                        <connections>
+                                            <action selector="rangedAnswerButtonPressed" destination="bAZ-GZ-gPc" eventType="touchUpInside" id="QrE-m6-BAO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W1Q-D7-yzk">
                                 <rect key="frame" x="0.0" y="91" width="320" height="4"/>
                             </progressView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQw-aN-eQs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQw-aN-eQs">
                                 <rect key="frame" x="16" y="103" width="288" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -250,6 +268,26 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="multipleStackView" destination="4kV-DQ-GJz" id="Pe7-WK-gro"/>
+                        <outlet property="questionLabel" destination="bQw-aN-eQs" id="HaW-qx-pCM"/>
+                        <outlet property="questionProgressView" destination="W1Q-D7-yzk" id="Bdr-PV-1Kl"/>
+                        <outlet property="rangedSlider" destination="ZpQ-A4-0Qa" id="gtJ-zS-e0F"/>
+                        <outlet property="rangedStackView" destination="keZ-Zj-SsA" id="wBv-iO-5B7"/>
+                        <outlet property="singleStackView" destination="zaA-KJ-sMv" id="HFn-LI-Xlf"/>
+                        <outletCollection property="singleButtons" destination="7Am-1u-o2O" collectionClass="NSMutableArray" id="kc9-Dg-Nao"/>
+                        <outletCollection property="singleButtons" destination="BKj-tc-xKM" collectionClass="NSMutableArray" id="Dwt-Be-Xoc"/>
+                        <outletCollection property="singleButtons" destination="TpT-e1-r2G" collectionClass="NSMutableArray" id="5uO-zs-Naw"/>
+                        <outletCollection property="singleButtons" destination="csh-BY-bZs" collectionClass="NSMutableArray" id="kVB-qn-Ube"/>
+                        <outletCollection property="multipleLabels" destination="YHZ-mG-RVm" collectionClass="NSMutableArray" id="ufD-eK-EHh"/>
+                        <outletCollection property="multipleLabels" destination="Ug8-ei-LtW" collectionClass="NSMutableArray" id="DfP-2z-twr"/>
+                        <outletCollection property="multipleLabels" destination="aPT-Mq-7js" collectionClass="NSMutableArray" id="sbY-Si-tez"/>
+                        <outletCollection property="multipleLabels" destination="57u-GX-9PC" collectionClass="NSMutableArray" id="ZeE-rq-fbh"/>
+                        <outletCollection property="multipleSwittchs" destination="jtY-Ia-EwV" collectionClass="NSMutableArray" id="6hf-2J-1WC"/>
+                        <outletCollection property="multipleSwittchs" destination="GEt-gf-KWN" collectionClass="NSMutableArray" id="NaT-bT-IkY"/>
+                        <outletCollection property="multipleSwittchs" destination="YXj-bV-GR7" collectionClass="NSMutableArray" id="KmL-kS-lWc"/>
+                        <outletCollection property="multipleSwittchs" destination="EMx-az-bON" collectionClass="NSMutableArray" id="0Ph-4h-fjM"/>
+                        <outletCollection property="rangedLabels" destination="zLO-rx-1R0" collectionClass="NSMutableArray" id="x9y-28-vDi"/>
+                        <outletCollection property="rangedLabels" destination="8NW-Ly-9Zp" collectionClass="NSMutableArray" id="ldZ-kO-F2w"/>
                         <segue destination="rsg-6m-14H" kind="show" identifier="showResult" id="3AY-VB-F0X"/>
                     </connections>
                 </viewController>
@@ -260,7 +298,7 @@
         <!--Результат-->
         <scene sceneID="R8v-GB-4Ga">
             <objects>
-                <viewController id="rsg-6m-14H" sceneMemberID="viewController">
+                <viewController id="rsg-6m-14H" customClass="ResultViewController" customModule="PersonalQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="j4d-ox-LoS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,10 +330,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Результат" id="szb-2r-lLZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fd7-hi-62s"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fd7-hi-62s">
+                            <connections>
+                                <segue destination="kNR-Ic-m8d" kind="unwind" unwindAction="unwindFor:towards:" id="7uj-Qf-zpd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udf-Wq-RFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kNR-Ic-m8d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2171" y="51"/>
         </scene>
