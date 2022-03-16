@@ -14,10 +14,10 @@ class ResultViewController: UIViewController {
     
     var answersChosen: [Answer] = []
 
-    var dogs:[Animal] = []
-    var cats:[Animal] = []
-    var rabbits:[Animal] = []
-    var turtles:[Animal] = []
+    private var dogs:[Animal] = []
+    private var cats:[Animal] = []
+    private var rabbits:[Animal] = []
+    private var turtles:[Animal] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
