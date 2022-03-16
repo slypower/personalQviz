@@ -326,10 +326,14 @@
                     <navigationItem key="navigationItem" title="Результат" id="szb-2r-lLZ">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Fd7-hi-62s">
                             <connections>
-                                <segue destination="kNR-Ic-m8d" kind="unwind" unwindAction="unwindFor:towards:" id="7uj-Qf-zpd"/>
+                                <segue destination="kNR-Ic-m8d" kind="unwind" unwindAction="unwindFor:" id="ebX-z8-QUl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="animalLabel" destination="E5e-Ze-RcQ" id="6Hl-U9-E4m"/>
+                        <outlet property="descriptionLabel" destination="3wo-Rc-P9a" id="d71-WY-aVK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udf-Wq-RFT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="kNR-Ic-m8d" userLabel="Exit" sceneMemberID="exit"/>
