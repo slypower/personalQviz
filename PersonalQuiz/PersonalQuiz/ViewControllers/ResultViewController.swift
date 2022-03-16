@@ -25,7 +25,6 @@ class ResultViewController: UIViewController {
        
         for answer in answersChosen {
             
-            //animals.append(answer.animal)
             if answer.animal == .dog {
                 dogs.append(answer.animal)
             } else if answer.animal == .cat {
