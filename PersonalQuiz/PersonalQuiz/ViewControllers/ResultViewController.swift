@@ -14,44 +14,48 @@ class ResultViewController: UIViewController {
     
     var answersChosen: [Answer] = []
 
-    private var dogs:[Animal] = []
-    private var cats:[Animal] = []
-    private var rabbits:[Animal] = []
-    private var turtles:[Animal] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-       
-        for answer in answersChosen {
-            
-            if answer.animal == .dog {
-                dogs.append(answer.animal)
-            } else if answer.animal == .cat {
-                cats.append(answer.animal)
-            } else if answer.animal == .rabbit {
-                rabbits.append(answer.animal)
-            } else if answer.animal == .turtle {
-                turtles.append(answer.animal)
+        updateResult()
+    }
+    
+    private func updateResult() {
+        
+        var frequencyOfAnimals: [Animal: Int] = [:]
+        let animals = answersChosen.map {$0.animal}
+        
+        for animal in animals {
+            if let animalTypeCount = frequencyOfAnimals[animal] {
+                frequencyOfAnimals.updateValue(animalTypeCount + 1, forKey: animal)
+            } else {
+                frequencyOfAnimals[animal] = 1
             }
         }
         
-        let animals = [dogs, cats, rabbits, turtles]
+        /* или так
+        for animal in animals {
+            frequencyOfAnimals[animal] = (frequencyOfAnimals[animal] ?? 0) + 1
+        }*/
         
-        let maximumCountArrayEnimals = getMaximumCountArrayEnimals(from: animals)
+        let sordedFrequencyOfAnimals = frequencyOfAnimals.sorted {$0.value > $1.value}
+        guard let mostfFequencyAnimals = sordedFrequencyOfAnimals.first?.key else {return}
         
-        let animal = maximumCountArrayEnimals.first
         
-        animalLabel.text = "Вы - \(String(describing: animal!.rawValue))!"
-        descriptionLabel.text = animal?.definition
+        /*
+        //решение в одну строку
+        let mostfFequencyAnimals = Dictionary(qrouping: answers) {$0.aminal}
+            .sorted {$0.value.count > $1.value.count}
+            .first?.key
+        */
         
-    }
-   
-    private func getMaximumCountArrayEnimals(from arrays: [[Animal]]) -> [Animal] {
-        guard let maxArray = arrays.max(by: {(a, b) -> Bool in
-            return a.count < b.count
-        }) else { return arrays.first! }
-        return maxArray
+        updateUI(with: mostfFequencyAnimals)
     }
     
+    private func updateUI(with animal: Animal?) {
+        animalLabel.text = "Вы - \(animal?.rawValue ?? "🐶")!"
+        descriptionLabel.text = animal?.definition ?? ""
+    }
+        
+        
 }
